@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Delete Film Entry</h1>
+
+<p>Are you sure you want to delete the record for {{ film.title }}?</p>
+<form method="post" action="{{ url_for('delete_confirm', filmID=film.filmID) }}">
+    <button type="submit" class="btn btn-danger" name="action" value="delete">Yes</button>
+    <a href="{{ url_for('delete_list') }}" class="btn btn-secondary">No</a>
+</form>
+
+
+
+{% endblock %}
+

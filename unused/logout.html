@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% if session.user %}
+    <p>Welcome, {{ session['username'] }}!</p>
+    <a href="{{ url_for('logout') }}" class="btn btn-primary">Log Out</a>
+{% else %}
+    <a href="{{ url_for('login') }}" class="btn btn-primary">Log In</a>
+{% endif %}
+
+{% endblock %}

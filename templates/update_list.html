@@ -1,0 +1,12 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Update Records</h1>
+<ul>
+    {% for film in filmTable %}
+        <li class="film-record"><a href="{{ url_for('update_record', filmID=film.filmID) }}">{{ film.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

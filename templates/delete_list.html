@@ -1,0 +1,12 @@
+<!-- delete_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Delete Records</h1>
+<ul>
+    {% for film in filmTable %}
+        <li class="film-record"><a href="{{ url_for('delete_confirm', filmID=film.filmID) }}">{{ film.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

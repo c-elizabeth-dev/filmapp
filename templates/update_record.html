@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Update Film Entry</h1>
+
+
+<form method="post" action="{{ url_for('update_record', filmID=film.filmID) }}">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" class="form-control" value="{{ film.title }}">
+    </div>
+
+    <div class="form-group">
+        <label for="yearReleased">Year</label>
+        <input name="yearReleased" placeholder="year"
+                  class="form-control"
+                  value="{{ film.yearReleased }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <input name="rating" placeholder="Rating"
+                type="text" class="form-control"
+                value="{{ film.rating }}" ></input>
+    </div>
+
+    <div class="form-group">
+        <label for="duration">Duration</label>
+        <input name="duration" placeholder="duration"
+                class="form-control"
+                value="{{ film.duration }}"></input>
+    </div>
+
+
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input name="genre" placeholder="genre"
+                type="text" class="form-control"
+                value="{{ film.genre }}"></input>
+    </div>
+
+    <input type="hidden" name="filmID" value="{{ film.filmID }}">
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Discard changes</a>
+    
+</form>
+
+
+{% endblock %}

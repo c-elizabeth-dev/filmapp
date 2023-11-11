@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to FilmFlix {% endblock %}</h1>
+    {% for film in filmTable %}
+        <a class="highlight-menu" href="#"> <!--I need to create synopsis col in database and lead there when link clicked-->
+            <h2 class="film-title">{{ film.title }}</h2>
+            <p class="text-general">{{ film.yearReleased }} rated {{ film.rating }}</p>
+            <p class="text-general"> Duration: {{ film.duration}} minutes</p>
+        </a>
+        <span class="badge badge-primary">{{ film.genre }}</span>
+        <hr>
+    {% endfor %}
+
+
+{% endblock %}
